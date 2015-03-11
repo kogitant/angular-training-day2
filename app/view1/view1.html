@@ -1,1 +1,25 @@
-<p>This is the partial for view 1.</p>
+<h1>{{title}}</h1>
+<!--
+<pre>
+    {{todos | json }}
+</pre>
+-->
+<div>
+
+    <ol>
+        <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.done"></input>
+            <span class="edit-view" ng-show="editing">
+                <input type="text" ng-model="todo.description" /><button type="button" ng-click="editing=!editing">Save</button>
+            </span>
+            <span class="todoitem" ng-class="{strike: todo.done}" ng-hide="editing"  ng-click="editing=!editing">{{todo.description}}</span>
+
+            <span ng-click='remove(todo)'><img ng-src="/asset/icons/trash_can.png" /></span>
+        </li>
+    </ol>
+
+    <form name="todoForm" ng-submit="submit()" ng-controller="TodoFormController" class="todo-form">
+        <input name="description" type="text" ng-model="description" required />
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+</div>

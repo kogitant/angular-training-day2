@@ -28,3 +28,12 @@
   content: "";
   padding: 0;
 }
+
+
+.todoitem{
+
+}
+
+span.todoitem.strike{
+    text-decoration: line-through;
+}
